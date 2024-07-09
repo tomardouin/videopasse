@@ -1,0 +1,13 @@
+<h1>My Movies</h1>
+<div class=container>
+<ul>
+  <li><% @movies.each do |movie| %></li>
+  <li><%= link_to movie.title, movie_path(movie)%></li>
+ <li><%= movie.description %></li>
+  <li><%= movie.poster_url %></li>
+  <li><%= movie.status %></li>
+   <%= link_to "Delete",
+    movie_path(movie),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> 
+  <% end %>
+</div>

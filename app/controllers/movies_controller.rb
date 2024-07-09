@@ -1,22 +1,36 @@
 class MoviesController < ApplicationController
-  before_action :set_user, only: %i[create]
 
+  def index
+    @movies = Movie.all
+  end
+  
   def new
-    @movies = Movie.new
+    @movie = Movie.new
   end
 
   def show
-    @movies = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   def create
-    @movies = Movie.new(movie_params)
-    @movie.user = @user
-    if @movie.save
-      redirect_to movie_list
+    @movie = Movie.new(movie_params)
+    @movie.user = current_user
+    if @movie.save!
+      redirect_to movie_path(@movie)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(params[:movie])
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to movies_path, status: :see_other
   end
 
   private

@@ -1,0 +1,12 @@
+<h1>My offers</h1>
+<div class=container>
+<ul>
+  <% @offers.each do |offer| %>
+  <li><%= offer.name %></li>
+  <li><%= offer.start_date %></li>
+  <li><%= offer.end_date%></li>
+  <%= link_to "Delete",
+    offer_path(offer),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <% end %>
+</div>

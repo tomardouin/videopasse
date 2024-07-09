@@ -19,8 +19,79 @@
 
 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
 
+<!-- Structure de la card : begin -->
+<div class="flex-cassette-cards-page-container">
+  <div class="cassette-cards-container">
+
+    <div class="cassette-card d-flex p-3">
+      <div class="cassette-card-image">
+        <%= image_tag("vhs.png", width: '130') %>
+        <div class="cassette-card-image-poster"><%= image_tag 'https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg' %></div>
+      </div>
+
+      <div class="cassette-card-infos">
+        <h3 class="cassette-card-infos-movie-title"><!-- titre du film, à interpoler -->Retour Vers Le Futur</h3>
+        <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
+        <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
+        <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+        <p class="cassette-card-infos-summary"><!-- résumé du film, à interpoler -->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+      </div>
+    </div>
+
+<!-- a enlever : begin -->
+    <div class="cassette-card d-flex p-3">
+      <div class="cassette-card-image">
+        <%= image_tag("vhs.png", width: '130') %>
+        <div class="cassette-card-image-poster"><%= image_tag 'https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg' %></div>
+      </div>
+
+      <div class="cassette-card-infos">
+        <h3 class="cassette-card-infos-movie-title"><!-- titre du film, à interpoler -->Retour Vers Le Futur</h3>
+        <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
+        <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
+        <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+        <p class="cassette-card-infos-summary"><!-- résumé du film, à interpoler -->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+      </div>
+    </div>
+
+      <div class="cassette-card d-flex p-3">
+      <div class="cassette-card-image">
+        <%= image_tag("vhs.png", width: '130') %>
+        <div class="cassette-card-image-poster"><%= image_tag 'https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg' %></div>
+      </div>
+
+      <div class="cassette-card-infos">
+        <h3 class="cassette-card-infos-movie-title"><!-- titre du film, à interpoler -->Retour Vers Le Futur</h3>
+        <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
+        <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
+        <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+        <p class="cassette-card-infos-summary"><!-- résumé du film, à interpoler -->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+      </div>
+    </div>
+
+      <div class="cassette-card d-flex p-3">
+      <div class="cassette-card-image">
+        <%= image_tag("vhs.png", width: '130') %>
+        <div class="cassette-card-image-poster"><%= image_tag 'https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg' %></div>
+      </div>
+
+      <div class="cassette-card-infos">
+        <h3 class="cassette-card-infos-movie-title"><!-- titre du film, à interpoler -->Retour Vers Le Futur</h3>
+        <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
+        <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
+        <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+        <p class="cassette-card-infos-summary"><!-- résumé du film, à interpoler -->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+      </div>
+    </div>
+    <!-- a enlever :end -->
+
+  </div>
+</div>
+<!-- Structure de la card : end -->
+
+
 <div class="test"></div>
-<style> .test{height: 100vh;}</style>
+
 
 <footer class="foot" >
 
@@ -29,3 +100,4 @@
   <div class="yellow-line"></div>
   <div class="orange-line"></div>
 </footer>
+

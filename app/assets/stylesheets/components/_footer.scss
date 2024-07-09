@@ -4,14 +4,40 @@
 
 }
 
-.orange-line{
+.orange-line-footer{
   background-color: #f88917;
   width: 100%;
   padding: 15px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: #2F2F2F;
+}
+
+.copyright-footer-container{
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.copyright-footer-container p{
+  font-size: 0.8em;
+}
+
+.links-footer-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row !important;
+}
+
+.links-footer-container{
+  font-weight: bold;
+}
+
 .yellow-line {
   background: #FDCD0C;
   height: 8px;

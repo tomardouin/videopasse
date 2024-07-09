@@ -1,25 +1,15 @@
-.navbar-lewagon {
+.foot {
   display: flex;
   flex-direction: column;
 
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
 
 .orange-line{
   background-color: #f88917;
   width: 100%;
   padding: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .yellow-line {

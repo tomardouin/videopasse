@@ -1,7 +1,8 @@
 .navbar-lewagon {
   display: flex;
   flex-direction: column;
-  }
+
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -15,8 +16,10 @@
   background-color: #f88917;
   width: 100%;
   padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .yellow-line {

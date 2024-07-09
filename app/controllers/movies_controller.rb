@@ -1,9 +1,12 @@
 class MoviesController < ApplicationController
-
   def index
-    @movies = Movie.all
+    if params[:query].present?
+      @articles = Article.search_by_title_and_content(params[:query])
+    else
+      @articles = Article.all
+    end
   end
-  
+
   def new
     @movie = Movie.new
   end

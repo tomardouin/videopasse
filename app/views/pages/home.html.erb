@@ -1,4 +1,28 @@
+<nav class="navbar-lewagon">
+
+  <div class="orange-line">
+    <%= image_tag("logo-videopasse.png", width:'70') %>
+    <%= form_with url: "/", method: :get do |form| %>
+    <%= form.text_field :query, placeholder: "Entrez le titre du film"%>
+    <%= form.submit "Search" %>
+    <% end %>
+  </div>
+  <div class="yellow-line"></div>
+  <div class="red-line"></div>
+  <div class="blue-line"></div>
+</nav>
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
+<div class="test"></div>
+<style> .test{height: 100vh;}</style>
+
+<footer class="foot" >
+
+  <div class="blue-line"></div>
+  <div class="red-line"></div>
+  <div class="yellow-line"></div>
+  <div class="orange-line"></div>
+</footer>

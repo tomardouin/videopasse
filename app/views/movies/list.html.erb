@@ -9,6 +9,7 @@
           <li class="py-1"><%= movie.title %></li>
           <li class="py-1"><%= movie.overview %></li>
           <li class="list-group-item py-1"><img style="height: 300px" src="<%= movie.poster_url%>"></li>
+          <%= link_to "Réserver ce film", new_movie_offer_path(@movie), class: "btn btn-primary" %>
         </div>
       <%end%>
     </ul>

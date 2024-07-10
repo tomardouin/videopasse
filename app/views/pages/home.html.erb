@@ -3,10 +3,22 @@
   <div class="orange-line">
     <%= image_tag("logo-videopasse.png", width:'70') %>
     <%= form_with url: "/", method: :get do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Entrez le titre du film"%>
-    <%= submit_tag "Search" %>
+      <%= text_field_tag :query, params[:query], placeholder: "Entrez le titre du film"%>
+      <%= submit_tag "Search" %>
     <% end %>
-    <%= link_to "Login", new_user_session_path %>
+
+   <% if user_signed_in? %>
+      <%= link_to "Crée ta VHS!", new_movie_path %>
+    <% else %>
+      <%= link_to "Crée ta VHS!", new_user_session_path %>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+
   </div>
 
   <div class="yellow-line"></div>

@@ -3,7 +3,7 @@
 <ul class="list-unstyled">
   <% @movies.each do |movie| %>
   <li><%= link_to movie.title, movie_path(movie)%></li>
-  <li><%= movie.description %></li>
+  <li><%= movie.overview %></li>
   <li><%= movie.poster_url %></li>
   <li><%= movie.status %></li>
   <%= link_to "Delete",

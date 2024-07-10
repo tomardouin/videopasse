@@ -1,0 +1,40 @@
+.user-form-text-field{
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+  color: #2F2F2F;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.user-form-text-field:focus{
+  outline:none;
+}
+
+.form-button{
+  background-color: #00aeef;
+  border: none;
+  border-radius: 0px;
+  color: #FFFFFF;
+  transition: .4s ease;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+  box-shadow: 3px 3px 0px #2F2F2F;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-button:hover{
+  box-shadow: 4px 4px 0px #2F2F2F;
+  transform: scale(1.003);
+  background-color: #fe090e;
+}
+
+.form-container{
+  background-color: #B0B0B0;
+}

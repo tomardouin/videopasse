@@ -1,6 +1,6 @@
-<h1>My offers</h1>
-<div class=container>
-<ul>
+<div class="container", class="text-center">
+<h1>My bookings</h1>
+<ul class="list-unstyled">
   <% @offers.each do |offer| %>
   <li><%= offer.name %></li>
   <li><%= offer.start_date %></li>
@@ -9,4 +9,6 @@
     offer_path(offer),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <% end %>
+  <%= link_to "homepage", root_path, class: "btn btn-primary" %>
+  </ul>
 </div>

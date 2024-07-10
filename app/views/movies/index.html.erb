@@ -1,13 +1,15 @@
 <h1>My Movies</h1>
 <div class=container>
-<ul>
-  <li><% @movies.each do |movie| %></li>
+<ul class="list-unstyled">
+  <% @movies.each do |movie| %>
   <li><%= link_to movie.title, movie_path(movie)%></li>
- <li><%= movie.description %></li>
+  <li><%= movie.description %></li>
   <li><%= movie.poster_url %></li>
   <li><%= movie.status %></li>
-   <%= link_to "Delete",
+  <%= link_to "Delete",
     movie_path(movie),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> 
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <% end %>
 </div>
+<%= link_to "homepage", root_path, class: "btn btn-primary" %>
+<%= link_to "add a new movie", new_movie_path, class: "btn btn-secondary" %>

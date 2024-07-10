@@ -1,7 +1,9 @@
 .navbar-lewagon {
   display: flex;
   flex-direction: column;
-
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,9 +17,9 @@
 .orange-line{
   background-color: #f88917;
   width: 100%;
-  padding: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,4 +39,52 @@
   background-color: #00aeef;
   height: 4px;
   width: 100%;
+}
+
+.navbar-button{
+  background-color: #00aeef;
+  border: none;
+  border-radius: 0px;
+  color: #FFFFFF;
+  transition: .4s ease;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+  box-shadow: 3px 3px 0px #2F2F2F;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-button:hover{
+  box-shadow: 4px 4px 0px #2F2F2F;
+  transform: scale(1.003);
+}
+
+.navbar-button:hover{
+  background-color: #fe090e;
+}
+
+.form-text-field{
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+  color: #2F2F2F;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-form:hover{
+  box-shadow: 4px 4px 0px #2F2F2F;
+  transform: scale(1.003);
+}
+
+.navbar-form{
+  gap: 0px;
+  display: flex !important;
+  box-shadow: 3px 3px 0px #2F2F2F;
+  transition: .4s ease;
 }

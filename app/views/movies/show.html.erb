@@ -1,11 +1,27 @@
-<h1> Movies list </h1>
+<div class="container">
+    <h1> <%= @movie.title %> </h1>
 
- <%= @movie.title %>
- <%= @movie.overview %>
- <%= @movie.poster_url %>
- <%= @movie.status %>
+    <div class="flex-cassette-cards-page-container">
+        <div class="cassette-cards-container">
+            <div class="cassette-card d-flex p-3">
+            <div class="cassette-card-image">
+                <%= image_tag("vhs.png", width: '130') %>
+                <div class="cassette-card-image-poster"><img src="<%= @movie.poster_url%>"></div>
+            </div>
 
-  <%= link_to "list of user", list_movie_path, class: "btn btn-primary" %>
-  <%= link_to "my list of movies", movies_path, class: "btn btn-primary" %>
-  <%= link_to "homepage", root_path, class: "btn btn-primary" %>
-  <%= link_to "Book this film", new_movie_offer_path(@movie), class: "btn btn-primary" %>
+            <div class="cassette-card-infos">
+                <h3 class="cassette-card-infos-movie-title"><%= link_to @movie.title, movie_path(@movie) %></h3>
+                <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
+                <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
+                <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+                <p class="cassette-card-infos-summary"> <%= @movie.overview%> </p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "btn btn-primary" %> |
+    <%= link_to "Ma liste de films", movies_path, class: "btn btn-primary" %> |
+    <%= link_to "Page principale", root_path, class: "btn btn-primary" %> |
+    <%= link_to "Réserver ce film", new_movie_offer_path(@movie), class: "btn btn-primary" %>
+</div>

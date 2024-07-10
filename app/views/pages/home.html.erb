@@ -2,7 +2,7 @@
 
   <div class="orange-line">
     <%= image_tag("logo-videopasse.png", width:'90') %>
-    <%= form_with url: "/", class: "navbar-form", method: :get do %>
+      <%= form_with url: movies_path, method: :get do %>
       <%= text_field_tag :query, params[:query], placeholder: "Entrez le titre du film", class: "form-text-field"%>
       <%= submit_tag "Search", class: "navbar-button"%>
     <% end %>
@@ -42,7 +42,7 @@
         <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
         <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
         <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
-        <p class="cassette-card-infos-summary"><!-- résumé du film, à interpoler -->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+        <p class="cassette-card-infos-summary"> <%= movie.overview%> </p>
       </div>
     </div>
   <%end%>
@@ -50,8 +50,6 @@
 </div>
 
 <!-- Structure de la card : end -->
-
-
 
 
 <footer class="foot" >

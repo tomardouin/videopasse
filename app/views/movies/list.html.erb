@@ -1,12 +1,21 @@
 <div class="container">
-<h1>list</h1>
-<ul class="list-unstyled">
-<% @list.each do |movie| %>
-  <li><%= movie.title %></li>
-  <li><%= movie.description %></li>
-  <li><%= movie.poster_url %></li>
-  <li><%= movie.status %></li>
-<%end%>
-</ul>
+
+  <h1> Tout les films de l'utilisateur </h1>
+
+  <div class='mb-3'>
+    <ul class="list-unstyled">
+      <% @list.each do |movie| %>
+        <div class="py-3">
+          <li class="py-1"><%= movie.title %></li>
+          <li class="py-1"><%= movie.overview %></li>
+          <li class="list-group-item py-1"><img style="height: 300px" src="<%= movie.poster_url%>"></li>
+        </div>
+      <%end%>
+    </ul>
+  </div>
+
+  <%= link_to "Page principale", root_path, class: "btn btn-primary"%> |
+  <%= link_to "Ma liste de films", movies_path, class: "btn btn-primary" %>
+
 </div>
-<%= link_to "homepage", root_path, class: "btn btn-primary"%>
+

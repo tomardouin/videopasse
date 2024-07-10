@@ -23,10 +23,20 @@
   gap: 4px;
 }
 
-.cassette-card h3{
+.cassette-card-infos-movie-title{
   font-size: 1.2em;
   font-weight: bold;
   margin: 0px;
+}
+
+.cassette-card-infos-movie-title a{
+  text-decoration: none;
+  color: #2F2F2F;
+  transition: .3s ease;
+}
+
+.cassette-card-infos-movie-title a:hover{
+  color: #FCCD0D;
 }
 
 .cassette-card p{

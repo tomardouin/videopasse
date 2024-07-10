@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
     if params[:query].present?
-      @movies = Movie.search_by_title(params[:query])
+      @movies = Movie.search_by_title_and_year(params[:query])
     else
       @movies = Movie.where(user: current_user)
     end

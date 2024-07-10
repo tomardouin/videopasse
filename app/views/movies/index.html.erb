@@ -1,15 +1,19 @@
-<h1>My Movies</h1>
-<div class=container>
-<ul class="list-unstyled">
-  <% @movies.each do |movie| %>
-  <li><%= link_to movie.title, movie_path(movie)%></li>
-  <li><%= movie.overview %></li>
-  <li><%= movie.poster_url %></li>
-  <li><%= movie.status %></li>
-  <%= link_to "Delete",
-    movie_path(movie),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-  <% end %>
+<div class="container">
+
+  <h1>Mes films</h1>
+
+  <ul class="list-unstyled">
+    <% @movies.each do |movie| %>
+      <li class="py-1"><%= link_to movie.title, movie_path(movie)%></li>
+      <li class="py-1"><%= movie.overview %></li>
+      <li class="list-group-item py-1"><img style="height: 300px" src="<%= movie.poster_url%>"></li>
+      <%= link_to "Delete",
+        movie_path(movie),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <% end %>
+    </ul>
+
+  <%= link_to "Page principale", root_path, class: "btn btn-primary" %> |
+  <%= link_to "Ajouter un nouveau film", new_movie_path, class: "btn btn-secondary" %>
+
 </div>
-<%= link_to "homepage", root_path, class: "btn btn-primary" %>
-<%= link_to "add a new movie", new_movie_path, class: "btn btn-secondary" %>

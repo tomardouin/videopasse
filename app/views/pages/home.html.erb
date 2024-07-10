@@ -2,7 +2,7 @@
 
   <div class="orange-line">
     <%= image_tag("logo-videopasse.png", width:'90') %>
-      <%= form_with url: movies_path, method: :get do %>
+      <%= form_with url: movies_path, class: "navbar-form", method: :get do %>
       <%= text_field_tag :query, params[:query], placeholder: "Entrez le titre du film", class: "form-text-field"%>
       <%= submit_tag "Search", class: "navbar-button"%>
     <% end %>
@@ -39,10 +39,10 @@
 
       <div class="cassette-card-infos">
         <h3 class="cassette-card-infos-movie-title"><%= link_to movie.title, movie_path(movie) %></h3>
-        <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
-        <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
+        <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler --><%= (1..15).to_a.sample %> km</p>
+        <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> <%= (1..31).to_a.sample %> <%= ["Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"].sample %> 2024</p>
         <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
-        <p class="cassette-card-infos-summary"> <%= movie.overview%> </p>
+        <p class="cassette-card-infos-summary"> <%= movie.overview.slice(0, 110) %>... </p>
       </div>
     </div>
   <%end%>

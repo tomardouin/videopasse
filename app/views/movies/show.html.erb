@@ -1,7 +1,11 @@
 <h1> Movies list </h1>
+
  <%= @movie.title %>
  <%= @movie.overview %>
  <%= @movie.poster_url %>
  <%= @movie.status %>
 
-  <%= link_to "list", movies_path %>
+  <%= link_to "list of user", list_movie_path, class: "btn btn-primary" %>
+  <%= link_to "my list of movies", movies_path, class: "btn btn-primary" %>
+  <%= link_to "homepage", root_path, class: "btn btn-primary" %>
+  <%= link_to "Book this film", new_movie_offer_path(@movie), class: "btn btn-primary" %>

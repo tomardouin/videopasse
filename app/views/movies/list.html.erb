@@ -1,0 +1,12 @@
+<div class="container">
+<h1>list</h1>
+<ul class="list-unstyled">
+<% @list.each do |movie| %>
+  <li><%= movie.title %></li>
+  <li><%= movie.description %></li>
+  <li><%= movie.poster_url %></li>
+  <li><%= movie.status %></li>
+<%end%>
+</ul>
+</div>
+<%= link_to "homepage", root_path, class: "btn btn-primary"%>

@@ -1,6 +1,8 @@
 .foot {
   display: flex;
   flex-direction: column;
+  position: sticky;
+  bottom: 0px;
 
 }
 

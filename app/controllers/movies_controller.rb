@@ -1,9 +1,9 @@
 class MoviesController < ApplicationController
   def index
     if params[:query].present?
-      @movie = Movie.search_by_title(params[:query])
+      @movies = Movie.search_by_title(params[:query])
     else
-      @movie = Movie.all
+      @movies = Movie.all
     end
   end
 

@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :offers, only: [:index, :destroy]
   resources :movies do
     resources :offers, only: [:show, :new, :create, :update]
+    member do
+      get "list"
+    end
   end
 end

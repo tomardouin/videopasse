@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
     if params[:query].present?
       @movies = Movie.search_by_title(params[:query])
     else
-      @movies = Movie.all
+      @movies = Movie.where(user: current_user)
     end
   end
 
@@ -13,6 +13,11 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+  end
+
+  def list
+    @movie = Movie.find(params[:id])
+    @list = Movie.where(user: @movie.user)
   end
 
   def create

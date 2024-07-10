@@ -1,12 +1,9 @@
 <h1> Movies list </h1>
-<div class="container">
-  <ul class="list-unstyled">
-    <li><%= @movie.title %></li>
-    <li><%= @movie.description %></li>
-    <li><%= @movie.poster_url %></li>
-    <li><%= @movie.status %></li>
-  </ul>
-</div>
+
+ <%= @movie.title %>
+ <%= @movie.overview %>
+ <%= @movie.poster_url %>
+ <%= @movie.status %>
 
   <%= link_to "list of user", list_movie_path, class: "btn btn-primary" %>
   <%= link_to "my list of movies", movies_path, class: "btn btn-primary" %>

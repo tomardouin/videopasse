@@ -29,11 +29,11 @@
 <!-- Structure de la card : begin -->
 <div class="flex-cassette-cards-page-container">
   <div class="cassette-cards-container">
-<% @movies.each do |movie| %>
+  <% @movies.each do |movie| %>
     <div class="cassette-card d-flex p-3">
       <div class="cassette-card-image">
         <%= image_tag("vhs.png", width: '130') %>
-        <div class="cassette-card-image-poster"><%= image_tag 'https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg' %></div>
+        <div class="cassette-card-image-poster"><img src="<%= @movies.last.poster_url%>"></div>
       </div>
 
       <div class="cassette-card-infos">
@@ -44,13 +44,12 @@
         <p class="cassette-card-infos-summary"><!-- résumé du film, à interpoler -->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
       </div>
     </div>
- <%end%>
+  <%end%>
   </div>
 </div>
 <!-- Structure de la card : end -->
 
 
-<div class="test"></div>
 
 
 <footer class="foot" >

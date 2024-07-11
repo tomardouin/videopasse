@@ -2,18 +2,28 @@
 
   <h1>Mes films</h1>
 
-  <ul class="list-unstyled">
+    <div class="flex-cassette-cards-page-container">
+    <div class="cassette-cards-container">
     <% @movies.each do |movie| %>
-      <li class="py-1"><%= link_to movie.title, movie_path(movie)%></li>
-      <li class="py-1"><%= movie.overview %></li>
-      <li class="list-group-item py-1"><img style="height: 300px" src="<%= movie.poster_url%>"></li>
-      <%= link_to "Delete",
-        movie_path(movie),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-    <% end %>
-    </ul>
+      <div class="cassette-card d-flex p-3">
+        <div class="cassette-card-image">
+          <%= image_tag("vhs.png", width: '130') %>
+          <div class="cassette-card-image-poster"><img src="<%= movie.poster_url%>"></div>
+        </div>
 
-  <%= link_to "Page principale", root_path, class: "btn btn-primary" %> |
+        <div class="cassette-card-infos">
+          <h3 class="cassette-card-infos-movie-title"><%= link_to movie.title, movie_path(movie) %></h3>
+          <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler --><%= (1..15).to_a.sample %> km</p>
+          <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> <%= (1..31).to_a.sample %> <%= ["Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"].sample %> 2024</p>
+          <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+          <p class="cassette-card-infos-summary"> <%= movie.overview.slice(0, 110) %>... </p>
+          <%= link_to "Delete", movie_path(movie), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "navbar-button", style: "width: 70px" %>
+        </div>
+      </div>
+    <%end%>
+    </div>
+  </div>
+
   <%= link_to "Ajouter un nouveau film", new_movie_path, class: "btn btn-secondary" %>
 
 </div>

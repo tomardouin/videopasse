@@ -14,11 +14,18 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @user = current_user
+    @user_owner = @movie.user
 
-    @marker = [{
+    @markers = [{
         lat: @user.latitude,
-        lng: @user.longitude
-      }]
+        lng: @user.longitude,
+        marker_html: render_to_string(partial: "marker")
+      },
+      {
+        lat: @user_owner.latitude,
+        lng: @user_owner.longitude,
+        marker_html: render_to_string(partial: "marker_2")
+      } ]
   end
 
   def list

@@ -13,6 +13,12 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @user = current_user
+
+    @marker = [{
+        lat: @user.latitude,
+        lng: @user.longitude
+      }]
   end
 
   def list

@@ -1,7 +1,11 @@
-<div class="container">
-    <h1> <%= @movie.title %> </h1>
+    <div class="container d-flex flex-column justify-content-center align-items-center pt-4 pb-4">
+      <!-- title -->
+      <h1 class="movie-title"> <%= @movie.title %> </h1>
 
-    <div class="flex-cassette-cards-page-container">
+      <div class="container d-flex flex-row justify-content-around align-items-center">
+        <!-- card -->
+        <div class="flex-cassette-cards-page-container">
+
         <div class="cassette-cards-container">
             <div class="cassette-card d-flex p-3">
             <div class="cassette-card-image">
@@ -20,14 +24,27 @@
         </div>
     </div>
 
-    <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "btn btn-primary" %> |
-    <%= link_to "Ma liste de films", movies_path, class: "btn btn-primary" %> |
-    <%= link_to "Réserver ce film", new_movie_offer_path(@movie), class: "btn btn-primary" %>
+        <!-- map -->
+        <div style="width: 100%; height: 325px;" class="cassette-card"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+      </div>
+
+      <div class="container d-flex flex-row justify-content-around w-50 movie-action-buttons">
+        <!-- buttons -->
+        <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" %>
+        <%= link_to "Ma liste de films", movies_path, class: "page-button" %>
+        <%= link_to "Réserver ce film", new_movie_offer_path(@movie), class: "page-button" %>
+      </div>
 
     <div style="width: 100%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
     </div>
 
 </div>

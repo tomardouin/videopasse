@@ -18,10 +18,13 @@ class MoviesController < ApplicationController
 
     @markers = [{
         lat: @user.latitude,
-        lng: @user.longitude
-      }, {
+        lng: @user.longitude,
+        marker_html: render_to_string(partial: "marker")
+      },
+      {
         lat: @user_owner.latitude,
-        lng: @user_owner.longitude
+        lng: @user_owner.longitude,
+        marker_html: render_to_string(partial: "marker_2")
       }]
   end
 

@@ -42,7 +42,7 @@ def genre_strings(movie_genres_ids)
   movie_genres
 end
 
-@user = User.create(username: 'test', email: 'test@testmail.com', password: '123456')
+@user = User.create(username: 'test', email: 'test@testmail.com', password: '123456', localisation: 'place bellecour, 69002')
 apiurl = "https://tmdb.lewagon.com/movie/top_rated"
 top_rated = URI.open(apiurl).read
 movies = JSON.parse(top_rated)

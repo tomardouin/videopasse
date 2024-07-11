@@ -6,12 +6,9 @@ class Movie < ApplicationRecord
                   tsearch: { prefix: true }
                 }
   has_many :bookmarks
-  has_many :offers
+  has_many :offers, dependent: :destroy
 
   belongs_to :user
-
-
-
 
   validates :title, presence: true, uniqueness: true
   validates :overview, presence: true

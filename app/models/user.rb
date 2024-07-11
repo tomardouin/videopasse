@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :bookmarks
-  has_many :movies
-  has_many :offers
+  has_many :movies, dependent: :destroy
+  has_many :offers, dependent: :destroy
   
   validates :username, presence: true, uniqueness: true
   # Include default devise modules. Others available are:

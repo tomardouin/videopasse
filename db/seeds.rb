@@ -42,7 +42,7 @@ def genre_strings(movie_genres_ids)
   movie_genres
 end
 
-@user = User.create(username: 'test', email: 'test@testmail.com', password: '123456', localisation: 'place bellecour, 69002')
+@user = User.create(username: 'Tomt', email: 'tom@tommail.com', password: '123456', localisation: 'place bellecour, 69002', longitude: 65.75, latitude: 4.85)
 apiurl = "https://tmdb.lewagon.com/movie/top_rated"
 top_rated = URI.open(apiurl).read
 movies = JSON.parse(top_rated)
@@ -54,7 +54,7 @@ movies["results"].each do |m|
     overview: m["overview"],
     release_year: m["release_year"],
     poster_url: "https://image.tmdb.org/t/p/w500#{poster_path}",
-    user: User.first,
+    user: @user,
     genre_name: genre_strings(m["genre_ids"])
   )
 end

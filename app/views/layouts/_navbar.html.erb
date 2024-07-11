@@ -12,10 +12,10 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Crée ta VHS!", new_movie_path, class: "navbar-button dropdown-item" %>
+            <%= image_tag "burger_cassette_blue_3D.png", width:'70', class: "dropdown-toggle hvr-grow-rotate", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="navbarDropdown">
               <%= link_to "Voir ma liste de film", movies_path, class: "navbar-button dropdown-item" %>
+              <%= link_to "Crée ta VHS!", new_movie_path, class: "navbar-button dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "navbar-button dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

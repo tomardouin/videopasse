@@ -15,7 +15,7 @@
           <h3 class="cassette-card-infos-movie-title"><%= link_to movie.title, movie_path(movie) %></h3>
           <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler --><%= (1..15).to_a.sample %> km</p>
           <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> <%= (1..31).to_a.sample %> <%= ["Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"].sample %> 2024</p>
-          <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
+          <p class="cassette-card-infos-genre"><strong>Genre: </strong><%= movie.genre_name.tr("[]\"", "") %></p>
           <p class="cassette-card-infos-summary"> <%= movie.overview.slice(0, 110) %>... </p>
         </div>
       </div>

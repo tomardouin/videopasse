@@ -35,7 +35,7 @@
 
       <div class="container d-flex flex-row justify-content-around w-75 movie-action-buttons">
         <!-- buttons -->
-        <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" %>
+        <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" if current_user != @movie.user %>
         <%= link_to "Ma liste de films", movies_path, class: "page-button" %>
         <%= link_to "Réserver ce film", new_movie_offer_path(@movie), class: "page-button" %>
       </div>

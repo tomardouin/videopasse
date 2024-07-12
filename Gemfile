@@ -80,3 +80,5 @@ gem "devise", "~> 4.9"
 gem "pg_search", "~> 2.3"
 
 gem "geocoder", "~> 1.8"
+
+gem "cloudinary"

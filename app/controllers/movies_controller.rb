@@ -37,6 +37,7 @@ class MoviesController < ApplicationController
 
   def list
     @movie = Movie.find(params[:id])
+    @user = @movie.user
     @list = Movie.where(user: @movie.user)
   end
 

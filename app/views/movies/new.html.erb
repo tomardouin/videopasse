@@ -2,16 +2,16 @@
 
 
 <div class="container w-100 d-flex justify-content-center align-items-center flex-column p-3 container-position">
-  <%= image_tag("television-static.gif", width: '65%') %>
+  <%= image_tag("television-static.gif", width: '68%') %>
   <div class="add-movie-form">
     <div class="form-text-visibility">
       <h1>Add a new movie</h1>
       <%= simple_form_for(@movie) do |f| %>
         <%= f.input :title %>
         <%= f.input :overview %>
+        <%= f.input :genre_name %>
         <%= f.input :poster_url %>
-        <%= f.input :status %>
-          <%= f.submit :Submit, class: "page-button"%>
+        <%= f.submit :Submit, class: "page-button"%>
       <% end %>
       </div>
 

@@ -20,12 +20,19 @@ class MoviesController < ApplicationController
         lat: @user.latitude,
         lng: @user.longitude,
         marker_html: render_to_string(partial: "marker")
-      },
-      {
+      } , {
         lat: @user_owner.latitude,
         lng: @user_owner.longitude,
         marker_html: render_to_string(partial: "marker_2")
       }]
+
+      if @user == @user_owner
+        @markers = [{
+          lat: @user.latitude,
+          lng: @user.longitude,
+          marker_html: render_to_string(partial: "marker_2")
+        }]
+      end
   end
 
   def list

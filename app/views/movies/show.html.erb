@@ -1,4 +1,4 @@
-    <div class="container d-flex flex-column justify-content-center align-items-center pt-4 pb-4">
+    <div class="container d-flex flex-column justify-content-center align-items-center pt-4 pb-4 margin-for-movie">
       <!-- title -->
       <h1 class="movie-title"> <%= @movie.title %> </h1>
 
@@ -6,7 +6,7 @@
         <!-- card -->
         <div class="flex-cassette-cards-page-container">
 
-        <div class="cassette-cards-container">
+          <div class="cassette-cards-container">
             <div class="cassette-card d-flex p-3">
             <div class="cassette-card-image">
                 <%= image_tag("vhs.png", width: '130') %>
@@ -17,12 +17,12 @@
                 <h3 class="cassette-card-infos-movie-title"><%= link_to @movie.title, movie_path(@movie) %></h3>
                 <p class="cassette-card-infos-distance"><!-- distance de la cassette, à interpoler -->10 km</p>
                 <p class="cassette-card-infos-availability"><strong>Prochaine dispo:</strong><br/><!-- date de dispo de la cassette, à interpoler --> 12 Juillet 2024</p>
-                <p class="cassette-card-infos-genre"><strong>Genre:</strong><!-- categorie du film, à interpoler --> Sci-Fi, Aventure, Comédie</p>
-                <p class="cassette-card-infos-summary"> <%= @movie.overview%> </p>
+                <p class="cassette-card-infos-genre"><strong>Genre: </strong><%= @movie.genre_name.tr("[]\"", "") if @movie.genre_name!=nil%></p>
+                <p class="cassette-card-infos-summary"> <%= @movie.overview.slice(0, 110) if @movie.genre_name!=nil%>... </p>
             </div>
             </div>
+          </div>
         </div>
-    </div>
 
         <!-- map -->
         <div style="width: 100%; height: 325px;" class="cassette-card"
@@ -33,7 +33,7 @@
 
       </div>
 
-      <div class="container d-flex flex-row justify-content-around w-50 movie-action-buttons">
+      <div class="container d-flex flex-row justify-content-around w-75 movie-action-buttons">
         <!-- buttons -->
         <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" %>
         <%= link_to "Ma liste de films", movies_path, class: "page-button" %>

@@ -11,6 +11,7 @@ require "json"
 require "open-uri"
 
 Movie.destroy_all
+User.destroy_all
 
 def genre_strings(movie_genres_ids)
   movie_genres = []

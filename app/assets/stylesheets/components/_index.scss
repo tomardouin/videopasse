@@ -5,6 +5,7 @@
 @import "navbar";
 @import "card";
 @import "footer";
+@import "login_form";
 
 body {
   background-color: #2F2F2F;
@@ -21,6 +22,7 @@ body {
   padding-right: 10px;
   margin: 0px;
   box-shadow: 3px 3px 0px #FDCD0C;
+  text-shadow: none;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -48,6 +50,16 @@ body {
   padding-bottom: 3em;
 }
 
+.page-link{
+  color: #FFFFFF;
+  transition: .3s ease;
+}
+
+.page-link:hover{
+  color: #FDCD0C;
+}
+
 .test-button{
   margin-right: 100px;
 }
+

@@ -1,0 +1,66 @@
+.login-form{
+  position: relative;
+  top: -455px;
+  left: -53px;
+  color: #FFFFFF;
+  width: 400px;
+  z-index: 999;
+}
+
+.form-text-visibility{
+  text-shadow: 2px 2px 3px #000000;
+  z-index: 1001;
+  position: relative;
+}
+
+.login-form-background{
+  background-color: #2F2F2F;
+  border-radius: 10px;
+  width: 500px;
+  height: 350px;
+  position: relative;
+  top: -299px;
+  left: -60px;
+  opacity: .5;
+  z-index: 1000;
+  box-shadow: 0px 0px 8px 8px #2F2F2F;
+}
+
+.container-position{
+  position: relative;
+  margin-top: 15px;
+}
+
+.form-control{
+  border-radius: 0px;
+  border: none;
+}
+
+.form-control:focus{
+  border: none;
+  border-bottom: 2px solid #FDCD0C;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.add-movie-form{
+  position: relative;
+  top: -524px;
+  left: -53px;
+  color: #FFFFFF;
+  width: 400px;
+  z-index: 999;
+}
+
+.add-movie-form-background{
+  background-color: #2F2F2F;
+  border-radius: 10px;
+  width: 500px;
+  height: 442px;
+  position: relative;
+  top: -435px;
+  left: -60px;
+  opacity: .5;
+  z-index: 1000;
+  box-shadow: 0px 0px 8px 8px #2F2F2F;
+}

@@ -10,6 +10,8 @@ class Movie < ApplicationRecord
 
   belongs_to :user
 
+  has_one_attached :photo
+
   validates :title, presence: true
   validates :overview, presence: true
   validates :genre_name, presence: true

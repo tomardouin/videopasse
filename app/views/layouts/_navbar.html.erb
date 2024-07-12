@@ -3,7 +3,7 @@
   <div class="orange-line">
     <%= link_to image_tag("logo-videopasse.png", width:'90'), root_path %>
       <div class="">
-        <%= form_with url: movies_path, class: "navbar-form", method: :get do %>
+        <%= form_with url: "/", class: "navbar-form", method: :get do %>
         <%= text_field_tag :query, params[:query], placeholder: "Entrez le titre du film", class: "form-text-field"%>
         <%= submit_tag "Search", class: "navbar-button"%>
         <% end %>

@@ -1,17 +1,17 @@
-    <div class="container d-flex flex-column justify-content-center align-items-center pt-4 pb-4 margin-for-movie">
-      <!-- title -->
-      <h1 class="movie-title"> <%= @movie.title %> </h1>
+<div class="container d-flex flex-column justify-content-center align-items-center pt-4 pb-4 margin-for-movie">
+    <!-- title -->
+    <h1 class="movie-title"> <%= @movie.title %> </h1>
 
-      <div class="container d-flex flex-row justify-content-around align-items-center">
+    <div class="container d-flex flex-row justify-content-around align-items-center">
         <!-- card -->
-        <div class="flex-cassette-cards-page-container">
+      <div class="flex-cassette-cards-page-container">
 
-          <div class="cassette-cards-container">
-            <div class="cassette-card d-flex p-3">
-            <div class="cassette-card-image">
+        <div class="cassette-cards-container">
+          <div class="cassette-card d-flex p-3">
+          <div class="cassette-card-image">
                 <%= image_tag("vhs.png", width: '130') %>
-                <div class="cassette-card-image-poster"><img src="<%= @movie.poster_url%>"></div>
-            </div>
+              <div class="cassette-card-image-poster"><img src="<%= @movie.poster_url%>"></div>
+          </div>
 
             <div class="cassette-card-infos">
                 <h3 class="cassette-card-infos-movie-title"><%= link_to @movie.title, movie_path(@movie) %></h3>
@@ -33,11 +33,20 @@
 
       </div>
 
-      <div class="container d-flex flex-row justify-content-around w-75 movie-action-buttons">
-        <!-- buttons -->
-        <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" %>
-        <%= link_to "Ma liste de films", movies_path, class: "page-button" %>
-        <%= link_to "Réserver ce film", new_movie_offer_path(@movie), class: "page-button" %>
+      <div class="container d-flex justify-content-around w-100 movie-action-buttons">
+        <div data-controller="toggle" class="mt-5">
+          <button class="page-button mb-3 test-button" data-action="click->toggle#fire" class="btn btn-outline-secondary">  Je veux réserver ce film  </button>
+          <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button test-button" if current_user != @movie.user %>
+          <%= link_to "Ma liste de films", movies_path, class: "page-button test-button" %>
+            <div class="text-white d-none" data-toggle-target="togglableElement">
+              <%= simple_form_for [@movie, @offer] do |f| %>
+                <%= f.input :start_date, as: :string, input_html: {data: {controller: "datepicker"}}%>
+                <%= f.input :end_date, as: :string, input_html: {data: {controller: "datepicker"}}%>
+                <%= f.submit "Submit", class: "page-button mb-3" %>
+              <% end %>
+            </div>
+        </div>
       </div>
+        <!-- buttons -->
 
 </div>

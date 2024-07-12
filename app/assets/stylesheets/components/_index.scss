@@ -40,6 +40,7 @@ body {
 
 .movie-action-buttons {
   margin-top: 30px;
+  gap: 3em;
 }
 
 .margin-for-movie{
@@ -57,3 +58,8 @@ body {
 .page-link:hover{
   color: #FDCD0C;
 }
+
+.test-button{
+  margin-right: 100px;
+}
+

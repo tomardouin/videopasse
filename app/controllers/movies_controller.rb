@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @offer = Offer.new
     @movie = Movie.find(params[:id])
     @user = current_user
     @user_owner = @movie.user
@@ -37,6 +38,7 @@ class MoviesController < ApplicationController
 
   def list
     @movie = Movie.find(params[:id])
+    @user = @movie.user
     @list = Movie.where(user: @movie.user)
   end
 

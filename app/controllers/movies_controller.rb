@@ -20,12 +20,11 @@ class MoviesController < ApplicationController
         lat: @user.latitude,
         lng: @user.longitude,
         marker_html: render_to_string(partial: "marker")
-      },
-      {
+      } , {
         lat: @user_owner.latitude,
         lng: @user_owner.longitude,
         marker_html: render_to_string(partial: "marker_2")
-      } ]
+      }]
 
       if @user == @user_owner
         @markers = [{
@@ -69,6 +68,6 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :overview, :poster_url, :status)
+    params.require(:movie).permit(:title, :overview, :poster_url, :genre_name)
   end
 end

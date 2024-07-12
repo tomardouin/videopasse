@@ -46,9 +46,9 @@
           <%= link_to "Ma liste de films", movies_path, class: "page-button test-button" %>
             <div class="text-white d-none" data-toggle-target="togglableElement">
               <%= simple_form_for [@movie, @offer] do |f| %>
-                <%= f.input :start_date, as: :string, input_html: {data: {controller: "datepicker"}}%>
-                <%= f.input :end_date, as: :string, input_html: {data: {controller: "datepicker"}}%>
-                <%= f.submit "Submit", class: "page-button mb-3" %>
+                <%= f.input :start_date, as: :string, input_html: {data: {controller: "datepicker"}}, label: "Date de début"%>
+                <%= f.input :end_date, as: :string, input_html: {data: {controller: "datepicker"}}, label: "Date de fin"%>
+                <%= f.submit "Envoyer", class: "page-button mb-3" %>
               <% end %>
             </div>
         </div>

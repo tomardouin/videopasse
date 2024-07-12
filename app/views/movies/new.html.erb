@@ -2,13 +2,13 @@
   <%= image_tag("television-static.gif", width: '68%') %>
   <div class="add-movie-form">
     <div class="form-text-visibility">
-      <h1>Add a new movie</h1>
+      <h1>Ajouter un film</h1>
       <%= simple_form_for(@movie) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :overview %>
-        <%= f.input :genre_name %>
+        <%= f.input :title, label: "Titre" %>
+        <%= f.input :overview, label: "Résumé" %>
+        <%= f.input :genre_name, label: "Style" %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit :Submit, class: "page-button"%>
+        <%= f.submit :Envoyer, class: "page-button"%>
       <% end %>
       </div>
 

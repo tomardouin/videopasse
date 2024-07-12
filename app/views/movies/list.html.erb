@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container d-flex flex-column justify-content-center align-items-center pt-4 pb-4 margin-for-movie">
 
-  <h1> Tout les films de l'utilisateur </h1>
+  <h1 class="movie-title"> Tous les films de <%= @movie.user.username %> </h1>
 
   <div class="flex-cassette-cards-page-container">
     <div class="cassette-cards-container">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <%= link_to "Ma liste de films", movies_path, class: "btn btn-primary" %>
+  <%= link_to "Ma liste de films", movies_path, class: "page-button" %>
 
 </div>
 

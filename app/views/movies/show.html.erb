@@ -44,8 +44,8 @@
       <% end %>
 </div>
         <!-- buttons -->
-        <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" %>
-        <!-- form -->
+
+        <%= link_to "Autre film de cet utilisateur", list_movie_path, class: "page-button" if current_user != @movie.user %>
 
         <%= link_to "Ma liste de films", movies_path, class: "page-button" %>
 

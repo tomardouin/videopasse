@@ -1,13 +1,24 @@
-<div class="container", class="text-center">
-<h1>My bookings</h1>
-<ul class="list-unstyled">
-  <% @offers.each do |offer| %>
-  <li><%= offer.name %></li>
-  <li><%= offer.start_date %></li>
-  <li><%= offer.end_date%></li>
-  <%= link_to "Delete",
-    offer_path(offer),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-  <% end %>
-  </ul>
+<div class="container text-center">
+  <h1 class="movie-title">My bookings</h1>
+  <div class="flex-cassette-cards-page-container">
+    <div class="cassette-cards-container">
+      <% @offers.each do |offer| %>
+        <div class="cassette-card d-flex p-3">
+          <div class="cassette-card-image">
+            <%= image_tag("vhs.png", width: '130') %>
+            <div class="cassette-card-image-poster">
+              <img src="<%= offer.movie.poster_url %>" alt="<%= offer.movie.title %> poster">
+            </div>
+          </div>
+
+          <div class="cassette-card-infos">
+            <h3 class="cassette-card-infos-movie-title"><%= link_to offer.movie.title, movie_path(offer.movie) %></h3>
+            <p class="cassette-card-infos-summary"><strong>Start Date:</strong> <%= offer.start_date %></p>
+            <p class="cassette-card-infos-summary"><strong>End Date:</strong> <%= offer.end_date %></p>
+            <%= link_to "Delete", offer_path(offer), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

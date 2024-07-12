@@ -5,7 +5,6 @@ export default class extends Controller {
   connect() {
     console.log(this.element)
     flatpickr(this.element, {
-      mode: "range",
       minDate: "today",
       dateFormat: "Y-m-d",
   })

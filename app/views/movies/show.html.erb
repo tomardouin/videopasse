@@ -9,8 +9,14 @@
         <div class="cassette-cards-container">
           <div class="cassette-card d-flex p-3">
           <div class="cassette-card-image">
-                <%= image_tag("vhs.png", width: '130') %>
-              <div class="cassette-card-image-poster"><img src="<%= @movie.poster_url%>"></div>
+              <%= image_tag("vhs.png", width: '130') %>
+              <div class="cassette-card-image-poster">
+                <% if @movie.poster_url != nil %>
+                  <img src="<%= @movie.poster_url %>">
+                <% else %>
+                  <%= cl_image_tag @movie.photo.key %>
+                <% end %>
+              </div>
           </div>
 
             <div class="cassette-card-infos">

@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1> Tout les films de l'utilisateur </h1>
+  <h1> Tout les films de <%= @user.username %> </h1>
 
   <div class="flex-cassette-cards-page-container">
     <div class="cassette-cards-container">
@@ -26,4 +26,3 @@
   <%= link_to "Ma liste de films", movies_path, class: "btn btn-primary" %>
 
 </div>
-

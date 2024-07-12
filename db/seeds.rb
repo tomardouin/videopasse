@@ -11,6 +11,7 @@ require "json"
 require "open-uri"
 
 Movie.destroy_all
+User.destroy_all
 
 def genre_strings(movie_genres_ids)
   movie_genres = []
@@ -42,6 +43,7 @@ def genre_strings(movie_genres_ids)
   movie_genres
 end
 
+
 @user = User.create(username: 'test', email: 'test@testmail.com', password: '123456', localisation: 'place bellecour, 69002')
 User.create(username: 'videopasse', email: 'videopasse@testmail.com', password: '123456', localisation: 'gare part-dieu, 69003')
 apiurl = "https://tmdb.lewagon.com/movie/top_rated"
@@ -55,7 +57,7 @@ movies["results"].each do |m|
     overview: m["overview"],
     release_year: m["release_year"],
     poster_url: "https://image.tmdb.org/t/p/w500#{poster_path}",
-    user: User.first,
+    user: @user,
     genre_name: genre_strings(m["genre_ids"])
   )
 end
